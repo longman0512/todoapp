@@ -1,18 +1,7 @@
-const intialState = [{
-    workName: 'work 1',
-    isDone: false
-}, {
-    workName: 'work 2',
-    isDone: true
-}, {
-    workName: 'work 3',
-    isDone: false
-}, {
-    workName: 'work 4',
-    isDone: true
-}];
+const intialState = [];
 
 export default function (state = intialState, action) {
+    var temp = [];
     switch (action.type) {
         case 'SAVE':
             return [
@@ -21,7 +10,7 @@ export default function (state = intialState, action) {
         case 'ADD_TODO':
             // state.unshift(action.payload);
             console.log(action.payload)
-            var temp = [...state, {
+            temp = [...state, {
                 ...action.payload,
                 isDone: false
             }]
@@ -35,17 +24,16 @@ export default function (state = intialState, action) {
             localStorage.setItem('todo', JSON.stringify(state));
             return [...state];
         case 'UPDATE_DONE':
-            var temp = [];
-            state.map((item, index)=>{
-                if(index === action.payload.id){
+            for(var i = 0; i < state.length; i++){
+                if(i === action.payload.id){
                     temp.push({
-                        ...item,
+                        ...state[i],
                         isDone: !action.payload.flag
                     })
                 } else {
-                    temp.push(item)
+                    temp.push(state[i])
                 }
-            })
+            }
             localStorage.setItem('todo', JSON.stringify(temp));
             return [
                 ...temp

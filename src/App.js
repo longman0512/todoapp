@@ -12,6 +12,7 @@ class App extends Component {
 
   componentDidMount(){
     var data = JSON.parse(localStorage.getItem('todo'))
+    if(data)
     this.props.getData(data);
   }
     
