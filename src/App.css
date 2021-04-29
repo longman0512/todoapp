@@ -36,12 +36,21 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: gray;
+    flex-wrap: wrap;
 }
 
 .list {
     width: 45%;
 }
 
+@media (max-width: 768px) {
+.list {
+    width: 100%;
+}
+.search {
+    font-size: 14px;
+}
+}
 .complete {
     text-decoration: line-through;
 }
