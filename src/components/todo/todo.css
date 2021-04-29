@@ -15,6 +15,7 @@
 
 .to-do-delete {
     border: none;
+    height: 40px;
     width: 80px;
     background-color: red;
     color: white;

@@ -31,7 +31,7 @@ class AddTodo extends Component {
     };
     render() {
         return (
-            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 <input type="text" className="search" id="list-name" placeholder="Enter Your Work Here" />
                 <button type="button" className="to-do-add" value="Add" onClick={this.addList} >Add</button>
             </div>
