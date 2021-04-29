@@ -1,0 +1,51 @@
+.container {
+    background-color: rgb(231, 231, 231);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.to-do-container {
+    margin-top: 60px;
+    position: absolute;
+    width: 80%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.to-do {
+    background-color: white;
+}
+
+.search {
+    width: auto;
+    border: none;
+    display: block;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.space-between {
+    height: 20px;
+    background-color: rgb(231, 231, 231);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: gray;
+}
+
+.list {
+    width: 45%;
+}
+
+.complete {
+    text-decoration: line-through;
+}
+
+.checkbox {
+    margin-right: 20px;
+}
