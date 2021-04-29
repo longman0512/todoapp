@@ -32,7 +32,7 @@ class AddTodo extends Component {
     render() {
         return (
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                <input type="text" className="search" id="list-name" placeholder="Enter Your Work Here" onKeyDown={event => this.addTodo(event)} />
+                <input type="text" className="search" id="list-name" placeholder="Enter Your Work Here" />
                 <button type="button" className="to-do-delete" value="Add" onClick={this.addList} >Add</button>
             </div>
         );
