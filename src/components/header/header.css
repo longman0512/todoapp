@@ -7,6 +7,6 @@
     background-color: #71a6d8;
     position: fixed;
     top: 0px;
-    width: 100%;
+    width: 100vw;
     z-index: 100;
 }
