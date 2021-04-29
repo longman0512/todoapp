@@ -34,13 +34,15 @@
 .list-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: gray;
     flex-wrap: wrap;
 }
 
 .list {
-    width: 45%;
+    width: 40%;
+    color: white;
+    margin: 10px;
 }
 
 @media (max-width: 768px) {

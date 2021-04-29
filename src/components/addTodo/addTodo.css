@@ -1,0 +1,9 @@
+.to-do-add {
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+    width: 80px;
+}

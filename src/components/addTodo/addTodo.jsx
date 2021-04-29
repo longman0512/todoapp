@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addTodoAction } from '../../actions/addTodoAction';
-
+import './addTodo.css'
 class AddTodo extends Component {
     constructor(props) {
         super(props);
@@ -33,7 +33,7 @@ class AddTodo extends Component {
         return (
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 <input type="text" className="search" id="list-name" placeholder="Enter Your Work Here" />
-                <button type="button" className="to-do-delete" value="Add" onClick={this.addList} >Add</button>
+                <button type="button" className="to-do-add" value="Add" onClick={this.addList} >Add</button>
             </div>
         );
     }

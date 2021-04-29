@@ -6,6 +6,7 @@
 
 .to-do-name {
     font-size: 25px;
+    color:royalblue;
 }
 
 .space {
@@ -14,7 +15,8 @@
 
 .to-do-delete {
     border: none;
-    background-color: cornflowerblue;
+    width: 80px;
+    background-color: red;
     color: white;
     font-size: 15px;
     padding: 8px 15px;
