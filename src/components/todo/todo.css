@@ -7,6 +7,10 @@
 .to-do-name {
     font-size: 25px;
     color:royalblue;
+    width: calc(100% - 125px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .space {
@@ -16,7 +20,7 @@
 .to-do-delete {
     border: none;
     height: 40px;
-    width: 80px;
+    width: 80px!important;
     background-color: red;
     color: white;
     font-size: 15px;
