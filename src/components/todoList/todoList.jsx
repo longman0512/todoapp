@@ -9,7 +9,6 @@ class TodoList extends Component {
                 <span>
                     {
                         this.props.items.map((element, index) => {
-                        
                             return !element.isDone ? <Todo identify='todo' item={element} key={index} index={index} /> : null;
                         })
                     }

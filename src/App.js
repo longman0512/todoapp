@@ -5,17 +5,26 @@ import TodoList from './components/todoList/todoList';
 import CompletedList from './components/completedList/completedList';
 import AddTodo from './components/addTodo/addTodo';
 import { saveLocal } from './actions/addTodoAction';
-
+import axios from 'axios';
 import './App.css';
 
 class App extends Component {
 
   componentDidMount(){
     var data = JSON.parse(localStorage.getItem('todo'))
-    if(data)
-    this.props.getData(data);
-  }
+    axios.post('http://localhost:4001/readData').then((res)=>{
+      console.log(res.data.data);
+      this.props.getData(res.data.data);
+    })
     
+  }
+  componentWillReceiveProps(props){
+    axios.post('http://localhost:4001/uploadData', {
+      data: props.items
+    }).then((res)=>{
+      console.log(res.data.data);
+    })
+  }
   render() {
     return (
       <div>
@@ -40,8 +49,14 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = () => state => {
+  return {
+      items: state.todoList
+  };
+};
+
 const mapDistachToProps = (dispatch) => ({
 
   getData: (data) => dispatch(saveLocal(data)),
 });
-export default connect(null, mapDistachToProps)(App);
+export default connect(mapStateToProps, mapDistachToProps)(App);
