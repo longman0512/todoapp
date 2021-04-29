@@ -4,6 +4,15 @@ import { bindActionCreators } from 'redux';
 import { addTodoAction } from '../../actions/addTodoAction';
 
 class AddTodo extends Component {
+    constructor(props) {
+        super(props);
+    this.state = {
+          numOfClicks: 0
+        };
+    this.addList = this.addList.bind(this);
+      }
+
+
     addTodo(event) {
         if (event.key === 'Enter') {
             this.props.addTodo({ workName: event.target.value });
@@ -11,9 +20,21 @@ class AddTodo extends Component {
         }
     }
 
+    addList () {
+        console.log("asdf", this.props)
+        var data = document.getElementById("list-name")
+
+        if(data.value)
+        this.props.addTodo({ workName: data.value });
+        // this.props.addTodo({ workName: data.value });
+        data.value = null
+    };
     render() {
         return (
-            <input type="text" className="search" placeholder="Enter Your Work Here" onKeyDown={event => this.addTodo(event)} />
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <input type="text" className="search" id="list-name" placeholder="Enter Your Work Here" onKeyDown={event => this.addTodo(event)} />
+                <button type="button" className="to-do-delete" value="Add" onClick={this.addList} >Add</button>
+            </div>
         );
     }
 }
