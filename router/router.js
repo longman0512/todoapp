@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 // mysql connection
-
+const path = require('path');
 const saltRounds = 10
 
 router.post("/uploadData",  async (req, res) => {
@@ -41,6 +41,9 @@ router.post("/readData",  async (req, res) => {
   
 });
 
+router.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/../client/build/index.html'));
+});
 
 
 module.exports = router;

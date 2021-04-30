@@ -17,4 +17,4 @@ const render = () => {
 store.subscribe(render);
 render();
 
-registerServiceWorker();
+// registerServiceWorker();
